@@ -27,7 +27,11 @@ def sensitive_user_data(filename="example-sensitive-user-data.csv", num_of_recor
 
     with open(filename, 'w') as the_file:
         for i in range(num_of_records):
-            the_file.write("{},{},{}\n".format(fake.user_name(), fake.password(), fake.email()))
+            password_choices = [fake.password(), "password","admin","123456","batman","hunter2","matlock"]
+            password_choices_weights = [10,1,1,1,1,1,1]
+            password_list = random.choices(password_choices, password_choices_weights)
+            password = password_list[0]
+            the_file.write("{},{},{}\n".format(fake.user_name(), password, fake.email()))
 
 def ip_data(filename="example-ip-data.csv", num_of_records=1000):
     """Writes a new file with ipv4 address, user_agent, and past datetime.
@@ -56,4 +60,8 @@ def transaction_data(filename="example-bank-account-data.csv", num_of_records=10
 
     with open(filename, 'w') as the_file:
         for i in range(num_of_records):
-            the_file.write("{},{},{},${:.2f}\n".format(fake.name(), fake.company(), fake.city(), random.random() * random.choice([1000,1000,1000,1000,1500,1500,1500,2000,2000,3000,3000,10000,100000,9999999])))
+            multiplication_amounts = [1000, 1500, 2000, 3000, 10000, 100000, 9999999]
+            multiplication_weights = [15, 12, 8, 6, 3, 2, 1]
+            multiplication_amount = random.choices(multiplication_amounts, multiplication_weights)[0]
+            bank_account_amount = random.random() * multiplication_amount
+            the_file.write("{},{},{},${:.2f}\n".format(fake.name(), fake.company(), fake.city(), bank_account_amount))
