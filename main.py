@@ -1,7 +1,4 @@
-from generate_random import user_data
-from generate_random import sensitive_user_data
-from generate_random import ip_data
-from generate_random import transaction_data
+from generate_random import user_data, ip_data, sensitive_user_data, transaction_data
 
 # Todo, Tests and mutations
 

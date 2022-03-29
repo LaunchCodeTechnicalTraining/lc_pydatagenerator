@@ -27,7 +27,7 @@ def sensitive_user_data(filename="example-sensitive-user-data.csv", num_of_recor
 
     with open(filename, 'w') as the_file:
         for i in range(num_of_records):
-            the_file.write("{},{},{}\n".format(fake.user_name, fake.password(), fake.email()))
+            the_file.write("{},{},{}\n".format(fake.user_name(), fake.password(), fake.email()))
 
 def ip_data(filename="example-ip-data.csv", num_of_records=1000):
     """Writes a new file with ipv4 address, user_agent, and past datetime.
