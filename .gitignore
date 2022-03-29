@@ -1,3 +1,4 @@
 junk/
 csv-dummy-data/
 env_pythonfaker/
+*.csv
