@@ -52,7 +52,7 @@ def ip_data(filename="example-ip-data.csv", num_of_records=1000):
     with open(filename, 'w') as the_file:
         the_file.write("ipv4_address,user_agent,datetime\n")
         for i in range(num_of_records):
-            the_file.write("{},{},{}\n".format(fake.ipv4(), fake.user_agent(), fake.past_datetime()))
+            the_file.write("{},{},{}\n".format(fake.ipv4(), fake.user_agent().replace(",", ";"), fake.past_datetime()))
 
 
 def transaction_data(filename="example-bank-account-data.csv", num_of_records=1000):
