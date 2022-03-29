@@ -13,7 +13,11 @@ def user_data(filename="example-user-data.csv", num_of_records=1000):
 
     with open(filename, 'w') as the_file:
         for i in range(num_of_records):
-            the_file.write("{},{},{},{}\n".format(fake.first_name(), fake.last_name(), fake.email(), fake.company()))
+            company_choices = [fake.company(), "Boeing","VMLY&R","Express Scripts","Edward Jones","Centene","World Wide Technology", "Microsoft", "Ad Astra", "Commerce Bank", "mastercard", "spectrum", "Hunter Engineering", "Emerson Electric", "Freedom pay", "Washington University", "Nueroflow", "Accenture"]
+            company_choices_weights = [2,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8]
+            company_list = random.choices(company_choices, company_choices_weights)
+            company = company_list[0]
+            the_file.write("{},{},{},{}\n".format(fake.first_name(), fake.last_name(), fake.email(), company))
 
 def sensitive_user_data(filename="example-sensitive-user-data.csv", num_of_records=1000):
     """Writes a new file with a user_name, password, and email.
