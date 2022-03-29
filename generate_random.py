@@ -66,7 +66,7 @@ def transaction_data(filename="example-bank-account-data.csv", num_of_records=10
     fake = Faker()
 
     with open(filename, 'w') as the_file:
-        the_file.write("name,company,transaction_total\n")
+        the_file.write("name,company,city,transaction_total\n")
         for i in range(num_of_records):
             multiplication_amounts = [1000, 1500, 2000, 3000, 10000, 100000, 9999999]
             multiplication_weights = [15, 12, 8, 6, 3, 2, 1]
