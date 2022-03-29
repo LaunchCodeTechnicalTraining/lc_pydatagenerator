@@ -1,7 +1,7 @@
 from faker import Faker
 from random import randint
 
-def generate_random_user_data(filename="example-user-data.csv", num_of_records=1000):
+def user_data(filename="example-user-data.csv", num_of_records=1000):
     """Write a new file with first_name, last_name, email, and company.
 
     Keyword arguments:
@@ -15,7 +15,7 @@ def generate_random_user_data(filename="example-user-data.csv", num_of_records=1
         for i in range(num_of_records):
             the_file.write("{},{},{},{}\n".format(fake.first_name(), fake.last_name(), fake.email(), fake.company()))
 
-def generate_random_sensitive_user_data(filename="example-sensitive-user-data.csv", num_of_records=1000):
+def sensitive_user_data(filename="example-sensitive-user-data.csv", num_of_records=1000):
     """Writes a new file with a user_name, password, and email.
 
     Keyword arguments:
@@ -29,7 +29,7 @@ def generate_random_sensitive_user_data(filename="example-sensitive-user-data.cs
         for i in range(num_of_records):
             the_file.write("{},{},{}\n".format(fake.user_name, fake.password(), fake.email()))
 
-def generate_random_ip_data(filename="example-ip-data.csv", num_of_records=1000):
+def ip_data(filename="example-ip-data.csv", num_of_records=1000):
     """Writes a new file with ipv4 address, user_agent, and past datetime.
 
     Keyword arguments:
@@ -44,7 +44,7 @@ def generate_random_ip_data(filename="example-ip-data.csv", num_of_records=1000)
             the_file.write("{},{},{}\n".format(fake.ipv4(), fake.user_agent(), fake.past_datetime()))
 
 
-def generate_random_transaction_data(filename="example-bank-account-data.csv", num_of_records=1000):
+def transaction_data(filename="example-bank-account-data.csv", num_of_records=1000):
     """Writes a new file with a name, company, city, and random integer.
 
     Keyword arguments:
