@@ -1,5 +1,5 @@
 from faker import Faker
-from random import randint
+import random
 
 def user_data(filename="example-user-data.csv", num_of_records=1000):
     """Write a new file with first_name, last_name, email, and company.
@@ -45,7 +45,7 @@ def ip_data(filename="example-ip-data.csv", num_of_records=1000):
 
 
 def transaction_data(filename="example-bank-account-data.csv", num_of_records=1000):
-    """Writes a new file with a name, company, city, and random integer.
+    """Writes a new file with a name, company, city, and random dollar amount.
 
     Keyword arguments:
     filename -- name of file you are writing to or overwriting (default "example-transaction-data.csv)
@@ -56,4 +56,4 @@ def transaction_data(filename="example-bank-account-data.csv", num_of_records=10
 
     with open(filename, 'w') as the_file:
         for i in range(num_of_records):
-            the_file.write("{},{},{},{}\n".format(fake.name(), fake.company(), fake.city(), randint(10000000, 999999999)))
+            the_file.write("{},{},{},${:.2f}\n".format(fake.name(), fake.company(), fake.city(), random.random() * random.choice([1000,1000,1000,1000,1500,1500,1500,2000,2000,3000,3000,10000,100000,9999999])))
